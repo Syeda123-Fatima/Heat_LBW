@@ -7,7 +7,7 @@ set.seed(123)
 options(stringsAsFactors = FALSE, scipen = 999)
 Sys.setenv(TZ = "Australia/Sydney")
 
-# Packages (minimal + no duplicates)
+# Packages
 pkgs <- c(
   "data.table","dplyr","tidyr","purrr","tibble","stringr",
   "lubridate","ggplot2","patchwork",
@@ -1502,7 +1502,6 @@ p_all <- ggplot(af_heat, aes(x = AF, y = Period_Scenario, color = Scenario)) +
 # ggsave("Figure2_proj_AF_all_provinces.png", p_all, width = 12, height = 10, dpi = 300)
 # print(p_all)
 
-
 ## ===============================
 ## Stage 9: Heat Vulnerability Index (HVI)
 ## ===============================
@@ -1969,8 +1968,6 @@ HVI_proj_province <- HVI_proj_districts %>%
 readr::write_csv(HVI_proj_province, "Projected_HVI_by_Province.csv")
 
 cat("✓ Projected HVI tables written:\n  - Projected_HVI_by_District.csv\n  - Projected_HVI_by_Province.csv\n")
-
-
 
 proj_hvi <- readr::read_csv("Projected_HVI_by_District.csv")
 
